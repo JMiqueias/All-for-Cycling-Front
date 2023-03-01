@@ -1,0 +1,55 @@
+<% var condicao = condicao || '' %>
+<% var categoria = condicao || '' %>
+<% if (!editar){%>
+    <button type="button" class="button green" id="edit-<%= nome %>">Sim</button>
+    <button type="button" class="button red" id="delete-<%= nome %>">Não</button>
+<% } %> 
+<form id = "form">
+        <div >
+            <label for="nome"></label>
+            <input size="50" type="text" class="inputs required"oninput="nameValidate()" id="entrada" placeholder="Nome do item" name="nome" size="4" value="<%=name ? name : ''%>">
+            <span class="span-required">Nome deve ter no mínimo 5 caracteres</span>
+        </div>
+        <br>
+        <div class="selecao" >
+            <select class="inputs required"oninput="cateValidade()" style="color: #a5a3a5;    ">
+        <option value="" disabled selected hidden>Categoria do item</option>
+            <option <%= categoria === 'Grave' ? 'selected' : '' %>>Grave</option>
+            <option <%= categoria === 'Médio' ? 'selected' : '' %>>Médio</option>
+            <option <%= categoria === 'Corneta' ? 'selected' : '' %>>Corneta</option>
+            <option <%= categoria === 'Tweeter' ? 'selected' : '' %>>Tweeter</option>
+            <option <%= categoria === 'Modulo amplificador' ? 'selected' : '' %>>Modulo amplificador</option>
+            <option <%= categoria === 'Alimentação' ? 'selected' : '' %>>Alimentação</option>
+            <option <%= categoria === 'Player' ? 'selected' : '' %>>Player</option>
+            </select>
+            <span class="span-required">Selecioner uma categoria!</span>
+        </div>
+        <div class="selecao">
+            <select class="inputs required"oninput="cateValidade()" style="color: #a5a3a5;">
+        <option value="" disabled selected hidden>Condição do item</option>
+        <option <%= condicao === 'Novo' ? 'selected' : '' %>>Novo</option>
+        <option <%= condicao === 'Usado' ? 'selected' : '' %>>Usado</option>
+            </select>
+            <span class="span-required">Selecioner A Condiçãodo item!</span>
+    </div>
+        <div >
+            <label for="descricao"></label>
+            <input type="text" class="inputs required"oninput="descValidate()" id="entrada" placeholder="Descricao" name="descricao"value="<%=descricao ? descricao : ''%>">
+            <span class="span-required">A descrição deve ter no mínimo 10 caracteres</span>
+        </div>
+        
+        <div >
+            <label for="valor"></label>
+            <input type="value" class="inputs required"oninput="valValidate()" id="entrada" placeholder="Valor" name="Valor"value="<%=valor ? valor : ''%>">
+            <span class="span-required">O valor não pode ser igual a zero!</span>
+        </div>
+        
+        <div class = "anexo"></p>
+        <p>Anexe aqui as fotos do Item
+        <input type="file" class="inputs required"oninput="imgValidate()"id="myFile" accept="image/*"/>
+        <span class="span-required">Você deve cadastrar uma foto</span>
+        </div>
+        <p><button type="submit" id="button">Salvar</button></p>
+    </form> 
+
+<script src="../scripts/scrpValCadItem.js"></script> 

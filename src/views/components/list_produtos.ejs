@@ -1,0 +1,19 @@
+
+<% let editar = false; %>
+
+<% if (typeof edit !== 'undefined') { %>
+  <% editar = edit; %>
+<% } %>
+<section>
+<div class="Container-item"id='itens'>
+  <% if (typeof produtos !== 'undefined') { %>
+  <% if (produtos.length === 0) { %>
+    <p>Não há produtos disponíveis no momento</p>
+  <% } else { %>
+    <% for (let produto of produtos) { %>
+      <%- include('produto', {editar,imagem:produto.foto,nome:produto.nome,valor:produto.valor,descricao:produto.descricao,categoria:produto.categoria,tipo:produto.tipo,anunciante:produto.userName,telefone:produto.userNumber,cidade:produto.userCity,UF:produto.userUF}) %>
+    <% } %>
+  <% }} %>
+  
+    </div>
+</section>
