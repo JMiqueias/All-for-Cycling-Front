@@ -31,15 +31,33 @@
               <li class="nav-item">
                 <a class="nav-link" href="\Login">Login</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="\CadUser">Cadastre-se</a>
-              </li>
             </ul>
             <form class="d-flex" id="search">
-              <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+              <input class="form-control me-2" id="searchInput" type="search" placeholder="Pesquisar" aria-label="Search">
+              <button class="btn btn-outline-success" id="searchButton" type="submit"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
             </form>
           </div>
         </div>
       </nav>
     <!-- navbar -->
+
+<script>
+  // seleciona o formulário e o botão de envio
+const form = document.getElementById("search");
+const button = document.getElementById("searchButton");
+
+// adiciona uma função de retorno de chamada para o evento de envio de formulário
+form.addEventListener("submit", function(event) {
+  event.preventDefault(); // evita o envio padrão do formulário
+
+  // obtém o valor do campo de entrada de pesquisa
+  const searchValue = document.getElementById("searchInput").value;
+
+  if(searchValue != ""){
+    console.log("Valor de pesquisa: " + searchValue);
+    window.location.href = "/?seach=" + searchValue;
+  }
+
+});
+
+</script>
