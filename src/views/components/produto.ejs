@@ -1,11 +1,15 @@
-<div class="item">
-    <a href="/More?imagem=<%= imagem %>&nome=<%= nome %>&valor=<%= valor %>&categoria=<%= categoria %>&tipo=<%= tipo %>&descricao=<%= descricao %>&anunciante=<%= anunciante %>&telefone=<%= telefone %>&cidade=<%= cidade %>&UF=<%= UF %>">
-      <img src="https://api-centraldosom.onrender.com/imagens/<%= imagem%>" alt="">
 
-    </a>
-    <p><%=nome%></p>
-    <h5>R$<%=valor%></h5>
-    <h3><%=tipo%></h3>
-</div>
+
+  <div class="col-md-3 py-3 py-md-0">
+        <div class="card">
+          <a href="/More?imagem=<%= imagem %>&nome=<%= nome %>&valor=<%= valor %>&categoria=<%= categoria %>&tipo=<%= tipo %>&descricao=<%= descricao %>&anunciante=<%= anunciante %>&telefone=<%= telefone %>&cidade=<%= cidade %>&UF=<%= UF %>">
+            <img id = "prod-img" src="https://api-all-for-cycling.onrender.com/imagens/<%= imagem%>" alt=""></a>
+            <div class="card-body">
+              <h3 class="text-center"><%=nome%></h3>
+              <p class="text-center"><%=tipo%></p>
+              <h2>R$<%=valor%><span></span></h2>
+          </div>
+        </div>
+  </div>
 
   
