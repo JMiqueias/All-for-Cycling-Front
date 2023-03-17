@@ -8,6 +8,7 @@ btnLogin.addEventListener('click', function(event) {
   // Selecione os campos de entrada do formulário
   const usernameOrEmail = document.querySelector('input[type="name"]').value;
   const password = document.querySelector('input[type="password"]').value;
+  const spans = document.querySelectorAll('.span-required');
 
   // Crie um objeto JavaScript com os valores dos campos
   const data = {
@@ -23,12 +24,24 @@ btnLogin.addEventListener('click', function(event) {
       'Content-Type': 'application/json'
     }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Resposta do servidor:', data);
-    localStorage.setItem('token', data.token);
-    window.location.href = '/';
-    // Faça algo com a resposta do servidor, como redirecionar o usuário para outra página
+  .then(res => {
+    console.log(res.status);
+      if (res.status === 200) {
+        res.json().then(data => {
+          localStorage.setItem('token', data.token);
+        });
+        message = ("Sucesso!");
+        type = "success";
+        console.log(message);
+        window.location.href = '/';
+
+      } else if (res.status === 400 || 500) {
+        message = ("Usuário ou senha incorretos!");
+        type = "danger"
+        console.log(message);
+        spans[0].style.display = 'block';
+        //window.location.href = '/CadUser';
+      }
   })
   .catch(error => {
     console.error('Erro ao enviar a solicitação:', error);
