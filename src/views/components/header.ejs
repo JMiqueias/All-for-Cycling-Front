@@ -29,7 +29,17 @@
                 <a class="nav-link" href="\Contato">Contato</a>
               </li>
               <li class="nav-item">
-                <a  class="nav-link" href="\Login">Login</a>
+                <a  id = "log" class="nav-link" href="\Login">Login</a>
+              </li>
+              
+              <li id = "perfil" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Perfil
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(75, 33, 192);">
+                  <li><a  class="dropdown-item" href="/produtos">Meus Produtos</a></li>
+                  <li><a id = "sair" class="dropdown-item" href="#">Sair</a></li>
+                </ul>
               </li>
             </ul>
             <form class="d-flex" id="search">
@@ -43,9 +53,14 @@
 
 <script>
   // seleciona o formulário e o botão de envio
-const login = document.getElementById("login");
+const localStorage = window.localStorage;
+const token = localStorage.getItem("token");
+const login = document.getElementById("log");
 const form = document.getElementById("search");
 const button = document.getElementById("searchButton");
+const perfil = document.getElementById("perfil");
+const sair = document.getElementById("sair");
+perfil.style.display = "none";
 
 // adiciona uma função de retorno de chamada para o evento de envio de formulário
 form.addEventListener("submit", function(event) {
@@ -60,5 +75,22 @@ form.addEventListener("submit", function(event) {
   }
 
 });
+
+if (token) {
+        perfil.style.display = "inline-block";
+        login.style.display = "none";
+} else {
+  login.innerHTML = "Login";
+  login.href = "/login";
+}
+
+sair.addEventListener("click", function() {
+  if (sair.innerHTML === "Sair") {
+    localStorage.removeItem("token");
+    window.location.href = "/login";
+  } else {
+    window.location.href = "/login";
+  }
+})
 
 </script>

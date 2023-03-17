@@ -51,7 +51,7 @@ console.log(isValid);
         console.log(data.message);
       })
       
-      window.location.href = '/';
+      //window.location.href = '/';
 
     } else if (res.status === 400 || 500) {
       res.json().then(data => {
