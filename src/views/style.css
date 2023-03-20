@@ -672,6 +672,13 @@ html{
     height: 70vh;
     border-radius: 10px;
 }
+#side2 select{
+    margin-top: 15px;
+    width: 300px;
+    border: none;
+    color: #413e35;
+    border-bottom: 2px solid #413e35;
+}
 #side2 h3{
     margin-top: 30px;
     color: #413e35;
@@ -700,12 +707,28 @@ html{
     border: none;
     text-shadow: 0px 0px 1px black;
 }
+#btnCadItem{
+    padding-top: 10px;
+}
+#btnCadItem a{
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: #ffc800;
+    color: white;
+    font-weight: bold;
+    border: none;
+    text-shadow: 0px 0px 1px black;
+}
 #side2 p{
     margin-top: 10px;
 }
 @media screen and (max-width:991px){
     .input2 input{
         width: 250px;
+    }
+    #side2 select{
+        width: 260px;
     }
 }
 @media screen and (max-width:765px){

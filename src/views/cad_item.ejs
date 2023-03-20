@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <!-- <%- include('components/header') %> -->
+  <%- include('components/header') %>
     
    <div class="container" id="login">
     <div class="row">
@@ -26,15 +26,41 @@
             <h3 class="text-center">Cadastre seu produto</h3>
         </div>
         <div class="col-md-7 py-3 py-md-0" id="side2">
-            <h3 class="text-center">Cadastro de equipamento</h3>
+            <h3 class="text-center">Cadastro de produto</h3>
             <div class="input2 text-center">
-            <input type="name" placeholder="Nome">
-            <input type="name" placeholder="Descrição">
-            <input type="email" placeholder="Endereço">
-            <input type="number" placeholder="Preço">
-            <input type="file" name="Imagens" style="background-color: rgb(75, 33, 192);" class="btn btn-success" multiple/>
+
+            <input class="inputs required" oninput="nameValidate()" type="name" placeholder="Nome">
+            <span class="span-required">Informe um nome valido</span>
+
+            <select id="sec" class="form-select-center required" oninput="cateValidade()" aria-label="Select Categoria">
+                <option  value="" disabled selected hidden>Selecione a categoria</option>
+                <option value="Bicicleta">Bicicleta</option>
+                <option value="EPI">EPI</option>
+                <option value="Iluminação">Iluminação</option>
+                <option value="GPS">GPS</option>
+                <option value="Peças">Peças</option>
+            </select>
+            <span class="span-required">Selecione uma categoria</span>
+
+            <select class="form-select-center required" oninput="condValidade()" aria-label="Select Qualidade">
+                <option value="" disabled selected hidden>Selecione a qualidade</option>
+                <option value="Novo">Novo</option>
+                <option value="Usado">Usado</option>
+            </select>
+            <span class="span-required">Selecione o estado do produto</span>
+
+            <input class="inputs required" oninput="descValidate()" type="name" placeholder="Descrição">
+            <span class="span-required">Informe a descrição do produto</span>
+
+            <input class="inputs required" type="number" oninput="valValidate()" placeholder="Preço">
+            <span class="span-required">Informe o preço</span>
+
+            <input type="file" style="background-color: rgb(75, 33, 192);" class="btn btn-success required" oninput="imgValidate()"id="myFile" accept="image/*"/>
+            <span class="span-required">Informe uma imagem</span>
+        
             </div>
-            <p class="text-center" id="btnlogin"><a href="#">Cadastrar</a></p>
+            <p class="text-center" id="btnCadItem" ><a href="#" onclick="cadastrar()">Cadastrar</a></p>
+            <span class="span-required">ERRO ao Criar Item!</span>
         </div>
 
     </div>
@@ -42,7 +68,7 @@
 
 
 
-    <!-- <%- include('components/footer') %> -->
+    <%- include('components/footer') %>
 
     <a href="#" class="arrow"><i><img src="./images/arrow.png" alt=""></i></a>
 
@@ -50,6 +76,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="./scripts/scrpValCadItem.js"></script>
 
 </body>
 </html>
