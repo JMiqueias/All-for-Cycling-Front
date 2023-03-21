@@ -34,7 +34,7 @@ if (!token) {
                           <div class="card-body">
                             <h3 class="text-center">${item.nome}</h3>
                             <p class="text-center">${item.tipo}</p>
-                            <h2>R$${item.valor}<span><i class="fa-solid fa-pen-to-square"></i><i class="fa-solid fa-trash"></i></span></h2>
+                            <h2>R$${item.valor}<span><a href="/EditItem?imagem=${item.foto}&nome=${item.nome}&valor=${item.valor}&categoria=${item.categoria}&tipo=${item.tipo}&descricao=${item.descricao}&anunciante=${item.userName}&telefone=${item.userNumber}&cidade=${item.userCity}&UF=${item.userUF}&id=${item.id}"><i id="edit" class="fa-solid fa-pen-to-square"></i></a><a href="#"><i id="delete" class="fa-solid fa-trash"></i></a></span></h2>
                           </div>
                       </div>
                     </div>

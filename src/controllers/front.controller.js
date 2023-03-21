@@ -82,6 +82,13 @@ const getSobre =(req,res) =>{
   res.render('sobre');
 }
 
+const getEditItem =(req,res) =>{
+  const editar = false; 
+  
+  const {imagem, nome, valor, categoria, tipo, descricao ,anunciante,telefone,cidade,UF,id} = req.query;
+  res.render('edit_item',{editar,imagem, nome, valor, categoria, tipo, descricao ,anunciante,telefone,cidade,UF,id});
+}
+
 module.exports ={
     getHome,
     getLogin,
@@ -90,5 +97,6 @@ module.exports ={
     geContato,
     getProds,
     getMore,
-    getSobre
+    getSobre,
+    getEditItem
 };
