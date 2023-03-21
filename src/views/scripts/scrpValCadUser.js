@@ -3,7 +3,7 @@ const spans = document.querySelectorAll('.span-required');
 const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
 
-function cadastrar() {
+function cadastrar(){
   nameValidate();
   emailValidate();
   telValidate();
@@ -29,8 +29,8 @@ console.log(isValid);
   // Enviar uma requisição fetch se todos os dados estiverem corretos
   const data = {
     name: campos[0].value,
-    email: campos[1].value,
-    number: campos[2].value,
+    email: campos[2].value,
+    number: campos[1].value,
     city: campos[3].value,
     state: campos[4].value,
     password: campos[5].value
@@ -51,7 +51,7 @@ console.log(isValid);
         console.log(data.message);
       })
       
-      //window.location.href = '/';
+      window.location.href = '/login';
 
     } else if (res.status === 400 || 500) {
       res.json().then(data => {
