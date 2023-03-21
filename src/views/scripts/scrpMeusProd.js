@@ -27,7 +27,7 @@ if (!token) {
                     // gera o conteúdo HTML usando o código acima e os dados do item
                     const itemHtml  = `
                     <div class="col-md-3 py-3 py-md-0">
-                      <div class="card">
+                      <div class="card" style="margin-top: 30px;">
                           <a href="/More?imagem=${item.foto}&nome=${item.nome}&valor=${item.valor}&categoria=${item.categoria}&tipo=${item.tipo}&descricao=${item.descricao}&anunciante=${item.userName}&telefone=${item.userNumber}&cidade=${item.userCity}&UF=${item.userUF}">
                             <img id = "prod-img" src="https://api-all-for-cycling.onrender.com/imagens/${item.foto}" alt="">
                           </a>
