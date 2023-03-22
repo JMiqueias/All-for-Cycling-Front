@@ -683,7 +683,7 @@ html{
 /* login */
 #login{
     width: 65%;
-    height: 70vh;
+    height: 80vh;
     background-color: rgb(75, 33, 192);
     margin-top: 35px;
     border-radius: 10px;
@@ -696,7 +696,7 @@ html{
 }
 #side2{
     background-color: white;
-    height: 70vh;
+    height: 80vh;
     border-radius: 10px;
 }
 #side2 select{
@@ -763,7 +763,17 @@ html{
         width: 260px;
     }
     #side2{
-        height: 60vh;
+        height: 80vh;
+        margin-bottom: 500px;
+    }
+    #row{
+        margin-bottom: 45%;
+    }
+    #login{
+        
+        color: #ffc800;
+        font-weight: bold;
+        margin-bottom: 400px;
     }
 }
 /* login */
